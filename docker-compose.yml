@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  zoom-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - CLIENT_ENV=development
+      - API_KEY=key
+      - API_SECRET=topsecret
+    command: sh -c "npm start"
